@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "aff906c5-41e7-4988-8cf0-5e41cf4fda0c",
+		"name": "TP2_WEB_II_Consutlas",
+		"description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49593185",
+		"_collection_link": "https://matiaspuppo-mp-7262955.postman.co/workspace/Matias-Puppo's-Workspace~69a727c3-0b8f-45f6-8b3e-ab5b517d2e3e/collection/49593185-aff906c5-41e7-4988-8cf0-5e41cf4fda0c?action=share&source=collection_link&creator=49593185"
+	},
+	"item": [
+		{
+			"name": "ok",
+			"item": [
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "GetUser",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetUserByID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"matias\",\r\n    \"apellido\": \"puppo\",\r\n    \"email\": \"matiaspuppo@gmailcom\",\r\n    \"password\":\"1234\",\r\n    \"provincia\": \"Buenos Aires\",\r\n    \"localidad\":\"Olivos\",\r\n    \"role\":\"admin\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/users/6901dbf13a406d80a5f530a4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										"6901dbf13a406d80a5f530a4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostUser",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"matias\",\r\n    \"apellido\": \"puppo\",\r\n    \"email\": \"matiaspuppo@gmailcom\",\r\n    \"password\":\"123456\",\r\n    \"provincia\": \"Buenos Aires\",\r\n    \"localidad\":\"Olivos\",\r\n    \"role\":\"admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PutUser",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"Carlos\",\r\n    \"apellido\": \"puppo\",\r\n    \"email\": \"azulpuppo@gmailcom\",\r\n    \"password\":\"123456\",\r\n    \"provincia\": \"Buenos Aires\",\r\n    \"localidad\":\"Olivos\",\r\n    \"role\":\"client\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/users/69094596acc9fb1a34a82858",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										"69094596acc9fb1a34a82858"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteUser",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"Pedro\",\r\n    \"apellido\": \"puppo\",\r\n    \"email\": \"pedropuppo@gmailcom\",\r\n    \"password\":\"123456\",\r\n    \"provincia\": \"Buenos Aires\",\r\n    \"localidad\":\"Olivos\",\r\n    \"role\":\"client\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/users/690944dcacc9fb1a34a82855",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										"690944dcacc9fb1a34a82855"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Trucks",
+					"item": []
+				}
+			]
+		},
+		{
+			"name": "error",
+			"item": [
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "GetUserByIDError",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"matias\",\r\n    \"apellido\": \"puppo\",\r\n    \"email\": \"matiaspuppo@gmailcom\",\r\n    \"password\":\"1234\",\r\n    \"provincia\": \"Buenos Aires\",\r\n    \"localidad\":\"Olivos\",\r\n    \"role\":\"admin\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/users/6901dbf13a406d80a5f530a5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										"6901dbf13a406d80a5f530a5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostUserError",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"matias\",\r\n    \"apellido\": \"puppo\",\r\n    \"email\": \"matiaspuppo@gmailcom\",\r\n    \"password\":\"123456\",\r\n    \"provincia\": \"Buenos Aires\",\r\n    \"localidad\":\"Olivos\",\r\n    \"role\":\"admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteUserError",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"Pedro\",\r\n    \"apellido\": \"puppo\",\r\n    \"email\": \"pedropuppo@gmailcom\",\r\n    \"password\":\"123456\",\r\n    \"provincia\": \"Buenos Aires\",\r\n    \"localidad\":\"Olivos\",\r\n    \"role\":\"client\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/users/690944dcacc9fb1a34a82854",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										"690944dcacc9fb1a34a82854"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PutUserError",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"Carlos\",\r\n    \"apellido\": \"puppo\",\r\n    \"email\": \"azulpuppo@gmailcom\",\r\n    \"password\":\"123456\",\r\n    \"provincia\": \"Buenos Aires\",\r\n    \"localidad\":\"Olivos\",\r\n    \"role\":\"client\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/users/69094596acc9fb1a34a82859",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										"69094596acc9fb1a34a82859"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Trucks",
+					"item": [
+						{
+							"name": "GetrucksByIDError",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/camiones/69094ccc679c87a5414f385",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"camiones",
+										"69094ccc679c87a5414f385"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostTucksError",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"dominio\": \"AA272PN\",\r\n    \"marca\": \"Mercedez Benz\",\r\n    \"modelo\": \"1015\",\r\n    \"kilometraje\":\"350000\",\r\n    \"anio\": 2015,\r\n    \"precio\":50000,\r\n    \"descripcion\":\"Tractor de ruta\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/camiones",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"camiones"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PutTruckError",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"dominio\": \"AG289AG\",\r\n    \"marca\": \"Ombu\",\r\n    \"modelo\": \"Reefer\",\r\n    \"kilometraje\":\"10000\",\r\n    \"anio\": 2023,\r\n    \"precio\":100000,\r\n    \"descripcion\":\"Equipo de frio\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/camiones/690950bc0760184277fa9034",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"camiones",
+										"690950bc0760184277fa9034"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteTruckError",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"dominio\": \"AA141QAP\",\r\n    \"marca\": \"Bajaj\",\r\n    \"modelo\": \"Rouser\",\r\n    \"kilometraje\":\"30000\",\r\n    \"anio\": 2021,\r\n    \"precio\":3500,\r\n    \"descripcion\":\"Es una moto\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/camiones/69094b95679c87a5414f385",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"camiones",
+										"69094b95679c87a5414f385"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
