@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt')
 const saltRounds = 10
 
 const jwt = require('jsonwebtoken')
-const secret = process.env.JWT_SECRET
+const secret = process.env.SECRET
 
 
 async function getUsers(req, res){
@@ -149,6 +149,50 @@ async function putUsers(req, res) {
     }
 }
 
+async function login(req, res){
+    try {
+        const email = req.body.email?.toLowerCase()
+
+        const password = req.body.password
+
+        if (!password || !email) {
+            return res.status(404).send({
+
+                ok:false,
+                message: "Email y Password son requeridos"
+
+            })
+        }
+
+        const user = await User.findOne({email:{$regex: email, $options: 'i'}})
+
+        if (!user) {
+            return res.status(404).send({
+                ok:false,
+                message:"Datos incorrectos"
+            })
+        }
+
+        user.password = undefined;
+
+        const token = jwt.sign({user}, secret,{expiresIn: '10m'})
+
+        res.status(200).send({
+            ok:true,
+            message:"Login correcto",
+            user,
+            token
+        })
+
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({
+            ok:false,
+            message: "Error al loguear."
+        })
+    }
+}
+
 
 
 module.exports = {
@@ -156,5 +200,6 @@ module.exports = {
     getUsersById,
     postUsers,
     deleteUsers,
-    putUsers
+    putUsers,
+    login
 }

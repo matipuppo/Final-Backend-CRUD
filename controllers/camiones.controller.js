@@ -141,7 +141,7 @@ async function putCamiones(req, res) {
         console.log(error)
         res.status(500).send({
             ok:false,
-            message:'Error al actualiazr el camion'
+            message:'Error al actualiazar el camion'
         })
     }
 }

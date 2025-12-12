@@ -4,6 +4,9 @@ const router = express.Router()
 
 const camionesController = require('../controllers/camiones.controller.js')
 
+const auth = require('../middlewares/auth.js')
+const isAdmin = require('../middlewares/isAdmin.js')
+
 //? GET
 
 
@@ -15,15 +18,15 @@ router.get('/camiones/:id', camionesController.getCamionesById)
 
 //? POST
 
-router.post('/camiones', camionesController.postCamiones)
+router.post('/camiones',[auth, isAdmin], camionesController.postCamiones)
 
 //? DELETE
 
-router.delete('/camiones/:id', camionesController.deleteCamiones)
+router.delete('/camiones/:id',[auth, isAdmin], camionesController.deleteCamiones)
 
 //? PUT
 
-router.put('/camiones/:id', camionesController.putCamiones)
+router.put('/camiones/:id',[auth, isAdmin], camionesController.putCamiones)
 
 
 
